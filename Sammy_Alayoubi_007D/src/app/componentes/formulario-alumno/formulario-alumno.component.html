@@ -1,0 +1,32 @@
+<h1>
+  Informacion secciones disponibles:
+</h1>
+<fieldset>
+  <p *ngFor="let objeto of secciones">
+    Id seccion:
+    {{objeto.id}}
+    Nombre seccion:
+    {{objeto.nombre_seccion | uppercase }}
+  </p>
+</fieldset>
+<br>
+<h1>Formulario alumno</h1>
+<fieldset>
+  Rut:
+  <input type="text" (input)="cambiarut($event)">
+  Nombre:
+  <input type="text" (input)="cambianombre($event)">
+  Apellido:
+  <input type="text" (input)="cambiaapellido($event)">
+  Edad:
+  <input type="number" (input)="cambiaedad($event)">
+  <br>
+  Seccion:
+  <select (change)="cambiaseccion($event)">
+    <option selected>(Vacio)</option>
+    <option *ngFor="let objeto of secciones" [value]="objeto.nombre_seccion">{{objeto.nombre_seccion | uppercase }}
+    </option>
+  </select>
+  <br>
+  <button (click)="confirmaralumno()">Registrar alumno</button>
+</fieldset>

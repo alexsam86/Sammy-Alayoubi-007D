@@ -1,0 +1,17 @@
+<fieldset>
+  Alumno:
+  <br>
+  <fieldset>
+    Rut: {{historial.alumnoregistro.rut}}
+    Nombre completo: {{historial.alumnoregistro.nombre | uppercase }} {{historial.alumnoregistro.apellido| lowercase}}
+    Edad: {{historial.alumnoregistro.edad}}
+    Seccion: {{historial.alumnoregistro.seccionorigen.nombre_seccion | uppercase }}
+  </fieldset>
+  <fieldset>
+    Fecha registro asistencia: {{ historial.fecha | date:'dd/MM/yyyy' }}
+    <br>
+    Hora registro asistencia: {{ historial.fecha | date:' h:mm a' }}
+  </fieldset>
+</fieldset>
+
+
